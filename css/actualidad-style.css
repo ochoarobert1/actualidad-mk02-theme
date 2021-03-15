@@ -31,7 +31,7 @@ a:hover {
   text-decoration: none;
 }
 .page-container {
-  min-height: 75vh;
+  min-height: 30vh;
 }
 /* LOADER */
 .loader {
@@ -386,6 +386,104 @@ a:hover {
 /* --------------------------------------------------------------
 2.- FOOTER
 -------------------------------------------------------------- */
+.the-footer {
+  background: #333333;
+  color: #ffffff;
+  padding: 4rem 1rem;
+  padding-bottom: 1rem;
+}
+.the-footer .footer-sidebar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.the-footer .footer-item {
+  padding: 3rem 1rem;
+  flex: 0 0 20%;
+  font-size: 0.85rem;
+}
+.the-footer .footer-item .widgettitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.the-footer .footer-item .widget_nav_menu .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.the-footer .footer-item .widget_nav_menu .menu .nav-item .nav-link {
+  padding-left: 0;
+  color: #ffffff;
+}
+.the-footer .footer-item .widget_nav_menu .menu .nav-item .nav-link:hover {
+  color: #E69D36;
+}
+.the-footer .footer-item-1 {
+  flex: 0 0 20%;
+  padding-right: 2rem;
+}
+.the-footer .footer-item-2 {
+  border-left: 4px solid white;
+  flex: 0 0 16%;
+  padding-left: 2rem;
+}
+.the-footer .footer-item-3 {
+  flex: 0 0 16%;
+}
+.the-footer .footer-item-4 {
+  flex: 0 0 16%;
+}
+.the-footer .footer-item-5 {
+  flex: 0 0 28% !important;
+}
+.footer-copy {
+  background: #333333;
+  color: #ffffff;
+  padding: 4rem 1rem;
+  padding-top: 1rem;
+}
+.footer-copy .footer-menu {
+  padding: 1.5rem;
+  padding-bottom: 0rem;
+}
+.footer-copy .footer-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer-copy .footer-menu ul .nav-item .nav-link {
+  text-transform: uppercase;
+  padding-left: 0;
+  color: #949494;
+}
+.footer-copy .footer-menu ul .nav-item .nav-link:hover {
+  color: #E69D36;
+}
+.footer-copy .footer-copy-content {
+  text-align: center;
+  padding: 0.5rem;
+}
+.footer-copy .footer-copy-content h5 {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+.footer-copy .footer-copy-content h6 {
+  color: #949494;
+  font-size: 1rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+}
+.footer-copy .footer-copy-content h6 a {
+  color: #ffffff;
+}
+.footer-copy .footer-copy-content h6 a:hover {
+  color: #E69D36;
+}
 /* --------------------------------------------------------------
 3.- HOME
 -------------------------------------------------------------- */

@@ -75,7 +75,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 register_nav_menus( array(
     'top_menu' => __( 'Top Header - Principal', 'actualidad' ),
-    'header_menu' => __( 'Menu Header - Principal', 'actualidad' )
+    'header_menu' => __( 'Menu Header - Principal', 'actualidad' ),
+    'footer_menu' => __( 'Menu Footer - Principal', 'actualidad' )
 ) );
 
 /* --------------------------------------------------------------
@@ -95,7 +96,7 @@ function actualidad_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 
-    register_sidebars( 4, array(
+    register_sidebars( 5, array(
         'name'          => __('Pie de Página %d', 'actualidad'),
         'id'            => 'sidebar_footer',
         'description'   => __('Estos widgets seran vistos en el pie de página del sitio', 'actualidad'),

@@ -38,6 +38,34 @@ MEDIAQUERIES SM - LAYOUTS BIGGER THAN 768px
         font-size: .8rem;
     }
 
+    .footer-copy .footer-copy-content h5 {
+        font-size: 1.1rem;
+    }
+
+    .the-footer .footer-item-1 {
+        flex: 0 0 100%;
+        padding: 0;
+        text-align: center;
+        border-bottom: 4px solid white;
+        padding-bottom: 3rem;
+    }
+
+    .footer-item-1 img {
+        max-width: 150px !important;
+    }
+
+    .the-footer .footer-item-2 {
+        border-left: 0;
+        flex: 0 0 20%;
+        padding-left: 1rem;
+    }
+
+    .the-footer .footer-item-5 {
+        flex: 0 0 38% !important;
+        ms-align-self: flex-start !important;
+        align-self: flex-start !important;
+    }
+
 }
 
 @media (max-width: 800px) {}
@@ -70,6 +98,39 @@ MEDIAQUERIES XS - LAYOUTS LESS THAN 600px
     .logo-center img {
         width: 100%;
     }
+
+    .the-footer .footer-item-2 {
+        border-left: 0;
+        flex: 0 0 33%;
+        padding-left: 1rem;
+    }
+
+    .the-footer .footer-item-3 {
+        border-left: 0;
+        flex: 0 0 33%;
+        padding-left: 1rem;
+    }
+
+    .the-footer .footer-item-4 {
+        border-left: 0;
+        flex: 0 0 33%;
+        padding-left: 1rem;
+    }
+
+    .the-footer .footer-item-5 {
+        flex: 0 0 100% !important;
+        ms-align-self: flex-start !important;
+        align-self: flex-start !important;
+        padding: 0 1rem;
+    }
+
+    .footer-copy .footer-copy-content h5 {
+        font-size: 1rem;
+    }
+
+    .footer-copy .footer-copy-content h6 {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 600px) {}
@@ -77,6 +138,21 @@ MEDIAQUERIES XS - LAYOUTS LESS THAN 600px
 @media (max-width: 533px) {
     .logo-mobile {
         padding: 0 1rem !important;
+    }
+
+    .the-footer .footer-item-2 {
+        border-left: 0;
+        flex: 0 0 30%;
+        padding-left: 1rem;
+    }
+
+    .the-footer .footer-item {
+        padding: 3rem 0rem;
+    }
+
+    .the-footer {
+        padding: 1rem 1rem !important;
+        padding-bottom: 1rem;
     }
 }
 
@@ -88,11 +164,13 @@ MEDIAQUERIES XS - LAYOUTS LESS THAN 600px
         height: 16px;
     }
 
-    #nav-icon1 span:nth-child(2), #nav-icon2 span:nth-child(2) {
+    #nav-icon1 span:nth-child(2),
+    #nav-icon2 span:nth-child(2) {
         top: 8px;
     }
 
-    #nav-icon1 span:nth-child(3), #nav-icon2 span:nth-child(3) {
+    #nav-icon1 span:nth-child(3),
+    #nav-icon2 span:nth-child(3) {
         top: 16px;
     }
 }

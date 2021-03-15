@@ -12,6 +12,7 @@ VARIABLES
 @black: #000000;
 @gray: #333333;
 @lgray: #636363;
+@mgray: #949494;
 @white: #ffffff;
 @orange: #E69D36;
 @lorange: #f9bc1c;
@@ -46,7 +47,7 @@ a {
 }
 
 .page-container {
-    min-height: 75vh;
+    min-height: 30vh;
 }
 
 /* LOADER */
@@ -437,10 +438,135 @@ a {
     left: -100vw;
 }
 
-
 /* --------------------------------------------------------------
 2.- FOOTER
 -------------------------------------------------------------- */
+.the-footer {
+    background: @gray;
+    color: @white;
+    padding: 4rem 1rem;
+    padding-bottom: 1rem;
+
+    & .footer-sidebar {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    & .footer-item {
+        padding: 3rem 1rem;
+        flex: 0 0 20%;
+        font-size: 0.85rem;
+
+        & .widgettitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        & .widget_nav_menu {
+            & .menu {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                & .nav-item {
+                    & .nav-link {
+                        padding-left: 0;
+                        color: @white;
+
+                        &:hover {
+                            color: @orange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .footer-item-1 {
+        flex: 0 0 20%;
+        padding-right: 2rem;
+    }
+
+    & .footer-item-2 {
+        border-left: 4px solid white;
+        flex: 0 0 16%;
+        padding-left: 2rem;
+    }
+
+    & .footer-item-3 {
+        flex: 0 0 16%;
+    }
+
+    & .footer-item-4 {
+        flex: 0 0 16%;
+    }
+
+    & .footer-item-5 {
+        flex: 0 0 28% !important;
+    }
+
+}
+
+.footer-copy {
+    background: @gray;
+    color: @white;
+    padding: 4rem 1rem;
+    padding-top: 1rem;
+
+    & .footer-menu {
+        padding: 1.5rem;
+        padding-bottom: 0rem;
+
+        & ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            & .nav-item {
+                & .nav-link {
+                    text-transform: uppercase;
+                    padding-left: 0;
+                    color: @mgray;
+
+                    &:hover {
+                        color: @orange;
+                    }
+                }
+            }
+        }
+    }
+
+    & .footer-copy-content {
+        text-align: center;
+        padding: .5rem;
+
+        & h5 {
+            font-size: 1.5rem;
+            font-weight: 200;
+        }
+
+        & h6 {
+            color: @mgray;
+            font-size: 1rem;
+            font-weight: 200;
+            letter-spacing: 2px;
+            margin-top: 1rem;
+
+            & a {
+                color: @white;
+
+                &:hover {
+                    color: @orange;
+                }
+            }
+        }
+    }
+}
 
 /* --------------------------------------------------------------
 3.- HOME
