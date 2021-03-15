@@ -143,6 +143,7 @@ require_once('includes/wp_custom_theme_control.php');
 
 require_once('includes/class-wpbakery-functions.php');
 require_once('includes/wpbakery-shortcodes/class-main-news-bar.php');
+require_once('includes/wpbakery-shortcodes/class-main-title-bar.php');
 
 /* --------------------------------------------------------------
     ADD CUSTOM IMAGE SIZE
