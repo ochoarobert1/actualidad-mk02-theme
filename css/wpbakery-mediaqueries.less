@@ -1,0 +1,77 @@
+// compress: false, javascriptEnabled: true
+/* --------------------------------------------------------------
+/* MAIN LESS MIXINS AND FUNCTIONS - LESSHAT
+-------------------------------------------------------------- */
+@import 'less/_lesshat.less';
+/* --------------------------------------------------------------
+VARIABLES
+-------------------------------------------------------------- */
+
+@mainfont: 'Poppins', sans-serif;
+@secondfont: 'Poppins', sans-serif;
+@black: #000000;
+@gray: #333333;
+@lgray: #636363;
+@mgray: #949494;
+@white: #ffffff;
+@orange: #F4911C;
+@lorange: #f9bc1c;
+
+/* --------------------------------------------------------------
+GENERAL PURPOSES
+-------------------------------------------------------------- */
+@media (max-width: 767px) {
+
+    .vc_col-has-fill>.vc_column-inner,
+    .vc_row-has-fill+.vc_row-full-width+.vc_row>.vc_column_container>.vc_column-inner,
+    .vc_row-has-fill+.vc_row>.vc_column_container>.vc_column-inner,
+    .vc_row-has-fill>.vc_column_container>.vc_column-inner {
+        padding: 0 !important;
+    }
+}
+
+/* --------------------------------------------------------------
+MAIN NEWS BAR SLIDER
+-------------------------------------------------------------- */
+@media (max-width: 1170px) {
+    .main-news-bar-title {
+        padding: 0.5rem 2rem !important;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .main-news-bar-title {
+        padding: 0.7rem 1rem !important;
+        font-size: 0.9rem;
+        margin-right: 10px;
+        flex: 0 0 18%;
+        max-width: 18%;
+    }
+
+    .main-news-bar-slider {
+        flex: 0 0 80%;
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-news-bar-slider {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .main-news-bar-title {
+        padding: 0.7rem 1rem !important;
+        font-size: 0.9rem;
+        margin-right: 10px;
+        flex: 0 0 22%;
+        max-width: 22%;
+    }
+}
+
+@media (max-width: 414px) {
+    .main-news-bar-container {
+        padding: 0;
+    }
+}

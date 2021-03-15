@@ -1,0 +1,75 @@
+// compress: false, javascriptEnabled: true
+/* --------------------------------------------------------------
+/* MAIN LESS MIXINS AND FUNCTIONS - LESSHAT
+-------------------------------------------------------------- */
+@import 'less/_lesshat.less';
+/* --------------------------------------------------------------
+VARIABLES
+-------------------------------------------------------------- */
+
+@mainfont: 'Poppins', sans-serif;
+@secondfont: 'Poppins', sans-serif;
+@black: #000000;
+@gray: #333333;
+@lgray: #636363;
+@mgray: #949494;
+@white: #ffffff;
+@orange: #F4911C;
+@lorange: #f9bc1c;
+
+/* --------------------------------------------------------------
+MAIN OVERRIDES
+-------------------------------------------------------------- */
+.vc_col-has-fill>.vc_column-inner,
+.vc_row-has-fill+.vc_row-full-width+.vc_row>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill+.vc_row>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill>.vc_column_container>.vc_column-inner {
+    padding-top: 0 !important;
+}
+
+/* --------------------------------------------------------------
+MAIN NEWS BAR
+-------------------------------------------------------------- */
+.main-news-bar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.main-news-bar-title {
+    background: @orange;
+    color: @white;
+    text-align: center;
+    padding: .5rem 3rem !important;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    flex: 0 0 17%;
+    max-width: 17%;
+    
+}
+
+.main-news-bar-slider {
+    flex: 0 0 81%;
+    max-width: 81%;
+}
+
+.main-news-bar-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    & a {
+        color: @black;
+    }
+
+    & h4 {
+        font-weight: 600;
+        font-size: 0.7rem;
+        max-width: 66%;
+        margin: 0;
+        margin-left: 5px;
+    }
+}

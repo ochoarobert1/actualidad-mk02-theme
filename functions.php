@@ -138,6 +138,13 @@ require_once('includes/wp_custom_post_type.php');
 require_once('includes/wp_custom_theme_control.php');
 
 /* --------------------------------------------------------------
+    ADD CUSTOM WPBAKERY OVERRIDES
+-------------------------------------------------------------- */
+
+require_once('includes/class-wpbakery-functions.php');
+require_once('includes/wpbakery-shortcodes/class-main-news-bar.php');
+
+/* --------------------------------------------------------------
     ADD CUSTOM IMAGE SIZE
 -------------------------------------------------------------- */
 if ( function_exists('add_theme_support') ) {
@@ -146,6 +153,7 @@ if ( function_exists('add_theme_support') ) {
 }
 if ( function_exists('add_image_size') ) {
     add_image_size('avatar', 100, 100, true);
+    add_image_size('small_thumb', 65, 43, array('center', 'center'));
     add_image_size('blog_img', 276, 217, true);
     add_image_size('single_img', 636, 297, true );
 }

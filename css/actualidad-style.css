@@ -168,7 +168,7 @@ a:hover {
   color: #000000;
 }
 .top-header a:hover {
-  color: #E69D36;
+  color: #F4911C;
 }
 .top-header .top-header-left {
   font-size: 1.2rem;
@@ -198,11 +198,11 @@ a:hover {
   letter-spacing: -0.5px;
 }
 .the-logo {
-  background: #E69D36;
-  background: linear-gradient(90deg, #E69D36 0%, #f9bc1c 50%, #E69D36 100%);
+  background: #F4911C;
+  background: linear-gradient(90deg, #F4911C 0%, #f9bc1c 50%, #F4911C 100%);
   text-align: center;
   padding: 1rem;
-  border-top: 1px solid #E69D36;
+  border-top: 1px solid #F4911C;
 }
 .the-logo .btn-header {
   background: #333333;
@@ -225,9 +225,10 @@ a:hover {
 }
 .the-navbar {
   padding: 0.5rem 0;
+  margin-bottom: 5px;
 }
 .the-navbar .row {
-  border-bottom: 1px solid #E69D36;
+  border-bottom: 1px solid #F4911C;
 }
 .the-navbar .navbar-container .navbar {
   padding: 0;
@@ -244,13 +245,13 @@ a:hover {
 }
 .the-navbar .navbar-container .navbar .nav-item .nav-link:hover {
   color: #333333;
-  border-color: #E69D36;
+  border-color: #F4911C;
 }
 .the-navbar .navbar-container .navbar .nav-item:first-child .nav-link {
   margin-left: 0;
 }
 .the-navbar .navbar-container .navbar .current-menu-item .nav-link {
-  border-bottom: 6px solid #E69D36;
+  border-bottom: 6px solid #F4911C;
 }
 .the-navbar .navbar-search .searchform {
   margin-top: -9px;
@@ -274,7 +275,7 @@ a:hover {
   border-bottom-right-radius: 25px;
 }
 .the-navbar .navbar-search .searchform .btn-outline-secondary:hover {
-  background: #E69D36;
+  background: #F4911C;
 }
 .logo-mobile {
   text-align: left;
@@ -340,12 +341,12 @@ a:hover {
   margin: 0.5rem 0;
 }
 .mobile-menu .mobile-menu-nav .menu .nav-item .nav-link:hover {
-  color: #E69D36;
+  color: #F4911C;
 }
 .mobile-menu .mobile-menu-nav .menu .current-menu-item::before {
   content: ' ';
   position: absolute;
-  background: #E69D36;
+  background: #F4911C;
   top: 13px;
   left: -20px;
   border-radius: 100%;
@@ -378,7 +379,7 @@ a:hover {
   border-bottom-right-radius: 25px;
 }
 .mobile-menu .mobile-navbar-search .searchform .btn-outline-secondary:hover {
-  background: #E69D36;
+  background: #F4911C;
 }
 .mobile-menu-hidden {
   left: -100vw;
@@ -416,7 +417,7 @@ a:hover {
   color: #ffffff;
 }
 .the-footer .footer-item .widget_nav_menu .menu .nav-item .nav-link:hover {
-  color: #E69D36;
+  color: #F4911C;
 }
 .the-footer .footer-item-1 {
   flex: 0 0 20%;
@@ -461,7 +462,7 @@ a:hover {
   color: #949494;
 }
 .footer-copy .footer-menu ul .nav-item .nav-link:hover {
-  color: #E69D36;
+  color: #F4911C;
 }
 .footer-copy .footer-copy-content {
   text-align: center;
@@ -482,7 +483,7 @@ a:hover {
   color: #ffffff;
 }
 .footer-copy .footer-copy-content h6 a:hover {
-  color: #E69D36;
+  color: #F4911C;
 }
 /* --------------------------------------------------------------
 3.- HOME
