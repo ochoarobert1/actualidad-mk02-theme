@@ -228,3 +228,84 @@ function talentos_custom_post_type() {
 
 }
 add_action( 'init', 'talentos_custom_post_type', 0 );
+
+
+// Register Custom Taxonomy
+function series_custom_taxonomy() {
+
+	$labels = array(
+		'name'                       => _x( 'Series de Podcast', 'Taxonomy General Name', 'actualidad' ),
+		'singular_name'              => _x( 'Serie de Podcast', 'Taxonomy Singular Name', 'actualidad' ),
+		'menu_name'                  => __( 'Series de Podcast', 'actualidad' ),
+		'all_items'                  => __( 'Todas las Series', 'actualidad' ),
+		'parent_item'                => __( 'Serie Padre', 'actualidad' ),
+		'parent_item_colon'          => __( 'Serie Padre:', 'actualidad' ),
+		'new_item_name'              => __( 'Nuevo Serie', 'actualidad' ),
+		'add_new_item'               => __( 'Agregar Serie', 'actualidad' ),
+		'edit_item'                  => __( 'Editar Serie', 'actualidad' ),
+		'update_item'                => __( 'Actualizar Serie', 'actualidad' ),
+		'view_item'                  => __( 'Ver Serie', 'actualidad' ),
+		'separate_items_with_commas' => __( 'Separar series por comas', 'actualidad' ),
+		'add_or_remove_items'        => __( 'Agregar o Remover Series', 'actualidad' ),
+		'choose_from_most_used'      => __( 'Escoger de los más usados', 'actualidad' ),
+		'popular_items'              => __( 'Series Populares', 'actualidad' ),
+		'search_items'               => __( 'Buscar Serie', 'actualidad' ),
+		'not_found'                  => __( 'No hay resultados', 'actualidad' ),
+		'no_terms'                   => __( 'No hay Series', 'actualidad' ),
+		'items_list'                 => __( 'Listado de Series', 'actualidad' ),
+		'items_list_navigation'      => __( 'Navegacion del Listado de Series', 'actualidad' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'show_in_rest'               => false,
+	);
+	register_taxonomy( 'series', array( 'podcast' ), $args );
+
+}
+add_action( 'init', 'series_custom_taxonomy', 0 );
+
+// Register Custom Taxonomy
+function tipo_programas_custom_taxonomy() {
+
+	$labels = array(
+		'name'                       => _x( 'Tipos de Programa', 'Taxonomy General Name', 'actualidad' ),
+		'singular_name'              => _x( 'Tipo de Programa', 'Taxonomy Singular Name', 'actualidad' ),
+		'menu_name'                  => __( 'Tipos de Programa', 'actualidad' ),
+		'all_items'                  => __( 'Todos los Tipos', 'actualidad' ),
+		'parent_item'                => __( 'Tipo Padre', 'actualidad' ),
+		'parent_item_colon'          => __( 'Tipo Padre:', 'actualidad' ),
+		'new_item_name'              => __( 'Nuevo Tipo', 'actualidad' ),
+		'add_new_item'               => __( 'Agregar Tipo', 'actualidad' ),
+		'edit_item'                  => __( 'Editar Tipo', 'actualidad' ),
+		'update_item'                => __( 'Actualizar Tipo', 'actualidad' ),
+		'view_item'                  => __( 'Ver Tipo', 'actualidad' ),
+		'separate_items_with_commas' => __( 'Separar tipos por comas', 'actualidad' ),
+		'add_or_remove_items'        => __( 'Agregar o Remover Tipos', 'actualidad' ),
+		'choose_from_most_used'      => __( 'Escoger de los más usados', 'actualidad' ),
+		'popular_items'              => __( 'Tipos Populares', 'actualidad' ),
+		'search_items'               => __( 'Buscar Tipo', 'actualidad' ),
+		'not_found'                  => __( 'No hay resultados', 'actualidad' ),
+		'no_terms'                   => __( 'No hay Tipos', 'actualidad' ),
+		'items_list'                 => __( 'Listado de Tipos', 'actualidad' ),
+		'items_list_navigation'      => __( 'Navegacion del Listado de Tipos', 'actualidad' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'show_in_rest'               => false,
+	);
+	register_taxonomy( 'tipo_programa', array( 'programacion' ), $args );
+
+}
+add_action( 'init', 'tipo_programas_custom_taxonomy', 0 );
