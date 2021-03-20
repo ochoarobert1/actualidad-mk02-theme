@@ -34,7 +34,7 @@ if (!class_exists('Main_News_Bar_Shortcode')) {
             extract(vc_map_get_attributes('main_news_bar', $atts));
             // Define output
             $output = '';
-            $args = array('post_type' => 'post', 'posts_per_page' => 8, 'order' => 'DESC', 'orderby' => 'date', 'category' => array($atts['category_bar']));
+            $args = array('post_type' => $atts['post_types'], 'posts_per_page' => 8, 'order' => 'DESC', 'orderby' => 'date', 'category' => array($atts['category_bar']));
             ob_start();
 ?>
             <section class="main-news-bar-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -105,6 +105,15 @@ if (!class_exists('Main_News_Bar_Shortcode')) {
                         'holder' => 'div',
                         'class' => '',
                         'param_name' => 'content'
+                    ),
+                    array(
+                        'heading' => __('Tipos de Entradas', 'actualidad'),
+                        'value' => __('post', 'actualidad'),
+                        'description' => __('Seleccione el/los tipos de entrada a mostrar en esta zona.', 'actualidad'),
+                        'type' => 'posttypes',
+                        'holder' => 'div',
+                        'class' => '',
+                        'param_name' => 'post_type'
                     ),
                     array(
                         'type'       => 'checkbox',

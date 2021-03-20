@@ -77,6 +77,15 @@ if (!class_exists('Main_Title_Bar_Shortcode')) {
                         'class' => '',
                         'param_name' => 'content'
                     ),
+                    array(
+                        'heading' => __('Link de la Barra', 'actualidad'),
+                        'value' => __('Link de la sección', 'actualidad'),
+                        'description' => __('Seleccione a donde debe ir la pagina si se hace click en el título', 'actualidad'),
+                        'type' => 'vc_link',
+                        'holder' => '',
+                        'class' => '',
+                        'param_name' => 'page_link'
+                    ),
                 ),
             );
         }

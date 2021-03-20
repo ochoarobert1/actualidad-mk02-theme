@@ -10,6 +10,9 @@ MAIN OVERRIDES
 .actualidad-no-paddings .vc_column-inner {
   padding: 0 !important;
 }
+.jetpack-video-wrapper {
+  margin-bottom: 0;
+}
 /* --------------------------------------------------------------
 MAIN NEWS BAR
 -------------------------------------------------------------- */
@@ -65,4 +68,59 @@ MAIN TITLE BAR
   margin: 0;
   font-size: 0.8rem;
   padding: 0.4rem 1rem;
+}
+/* --------------------------------------------------------------
+MAIN DEST NEWS
+-------------------------------------------------------------- */
+.main-dest-news-item {
+  position: relative;
+  overflow: hidden;
+  max-height: 408px;
+}
+.main-dest-news-item img {
+  width: 113%;
+  max-width: unset;
+  margin-left: -7%;
+}
+.main-dest-news-item .main-dest-news-item-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  flex-flow: column;
+  padding: 2.5rem 1.5rem;
+  color: #ffffff;
+  z-index: 9;
+}
+.main-dest-news-item .main-dest-news-item-wrapper h2 {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  margin-bottom: 1rem;
+}
+.main-dest-news-item .main-dest-news-item-wrapper .meta-wrapper {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+.main-dest-news-item .main-dest-news-item-wrapper:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.main-dest-news-item .main-dest-news-item-wrapper:hover h2 {
+  color: #F4911C;
 }

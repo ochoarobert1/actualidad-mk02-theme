@@ -7,6 +7,14 @@ VARIABLES
 /* --------------------------------------------------------------
 GENERAL PURPOSES
 -------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .wpb_video_widget .wpb_wrapper iframe {
+    width: 100% !important;
+  }
+  .jetpack-video-wrapper {
+    margin-bottom: 0;
+  }
+}
 /* --------------------------------------------------------------
 MAIN NEWS BAR SLIDER
 -------------------------------------------------------------- */
@@ -45,5 +53,67 @@ MAIN NEWS BAR SLIDER
 @media (max-width: 414px) {
   .main-news-bar-container {
     padding: 0;
+  }
+}
+/* --------------------------------------------------------------
+MAIN TITLE BAR
+-------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .main-title-bar-container {
+    padding-left: 0;
+    margin: 0 1rem;
+    max-width: 92%;
+  }
+}
+/* --------------------------------------------------------------
+MAIN NEWS DEST SLIDER
+-------------------------------------------------------------- */
+@media (max-width: 1170px) {
+  .main-dest-news-item img {
+    width: 119%;
+    margin-left: -10%;
+  }
+}
+@media (max-width: 991px) {
+  .main-dest-news-item img {
+    width: 131%;
+    margin-left: -15%;
+  }
+  .main-dest-news-item .main-dest-news-item-wrapper h2 {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+  }
+  .main-dest-news-item .main-dest-news-item-wrapper .meta-wrapper {
+    font-size: 0.8rem;
+  }
+  .main-dest-news-item .main-dest-news-item-wrapper {
+    padding: 1.5rem 1rem;
+  }
+}
+@media (max-width: 767px) {
+  .main-dest-news-container {
+    margin-bottom: 2rem;
+  }
+  .main-dest-news-item .main-dest-news-item-wrapper h2 {
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+  .main-dest-news-item .main-dest-news-item-wrapper .meta-wrapper {
+    font-size: 0.9rem;
+  }
+  .main-dest-news-item img {
+    width: auto;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .main-dest-news-item .main-dest-news-item-wrapper h2 {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+  }
+}
+@media (max-width: 424px) {
+  .main-dest-news-item .main-dest-news-item-wrapper h2 {
+    font-size: 1.2rem;
+    line-height: 2rem;
   }
 }

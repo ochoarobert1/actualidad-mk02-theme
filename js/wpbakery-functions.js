@@ -28,3 +28,17 @@ var mainNewsBarSwiper = new Swiper('.main-bar-swiper-container', {
         },
     }
 });
+
+var mainNewsDestSwiper = new Swiper('.main-bar-dest-news-swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    /*
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    */
+});
