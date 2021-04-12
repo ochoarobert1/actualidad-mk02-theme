@@ -64,6 +64,20 @@ ADMIN STYLE
 /* --------------------------------------------------------------
 CUSTOM MENU ADMIN PAGE
 -------------------------------------------------------------- */
+body #adminmenu #toplevel_page_actualidad-control-panel a {
+  background: #F4911C;
+  color: #000000;
+}
+body #adminmenu #toplevel_page_actualidad-control-panel .wp-menu-image {
+  background: url(../images/icon.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+body #adminmenu #toplevel_page_actualidad-control-panel .wp-menu-name {
+  font-size: 0.75rem;
+  line-height: 1.3rem;
+}
 body.toplevel_page_actualidad-control-panel #wpcontent {
   padding-left: 0;
 }

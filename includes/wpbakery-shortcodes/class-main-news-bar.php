@@ -33,8 +33,9 @@ if (!class_exists('Main_News_Bar_Shortcode')) {
             // Extract shortcode attributes (based on the vc_lean_map function - see next function)
             extract(vc_map_get_attributes('main_news_bar', $atts));
             // Define output
+            global $posted_id;
             $output = '';
-            $args = array('post_type' => $atts['post_types'], 'posts_per_page' => 8, 'order' => 'DESC', 'orderby' => 'date', 'category' => array($atts['category_bar']));
+            $args = array('post_type' => $atts['post_type'], 'posts_per_page' => 8, 'order' => 'DESC', 'orderby' => 'date', 'category' => array($atts['category_bar']), 'post__not_in' => $posted_id);
             ob_start();
 ?>
             <section class="main-news-bar-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -51,6 +52,7 @@ if (!class_exists('Main_News_Bar_Shortcode')) {
                                         <div class="main-bar-swiper-container swiper-container">
                                             <div class="swiper-wrapper">
                                                 <?php while ($arr_posts->have_posts()) : $arr_posts->the_post(); ?>
+                                                <?php array_push($posted_id, get_the_ID()); ?>
                                                     <div class="swiper-slide">
                                                         <article class="main-news-bar-item">
                                                             <picture><a href="<?php the_permalink(); ?>" title="<?php _e('Haga click aqui para visualizar esta noticia', 'actualidad'); ?>"><?php the_post_thumbnail('small_thumb', array('class' => 'img-fluid')); ?></a></picture>

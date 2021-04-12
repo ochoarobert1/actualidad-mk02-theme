@@ -486,5 +486,154 @@ a:hover {
   color: #F4911C;
 }
 /* --------------------------------------------------------------
-3.- HOME
+3.- SINGLE
 -------------------------------------------------------------- */
+.the-single picture img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.the-single h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+}
+.the-single .post-content {
+  font-size: 1rem;
+  line-height: 2rem;
+  text-align: justify;
+  margin-bottom: 3rem;
+}
+.the-single .post-content b,
+.the-single .post-content strong {
+  font-weight: 600;
+}
+.the-single .post-content a {
+  color: #F4911C;
+}
+.the-single .post-content a:hover {
+  color: #636363;
+}
+.the-single .single-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+}
+.the-single .single-meta .date {
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+.the-single .single-meta .single-categories a {
+  background: orange;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+.sidebar-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-container .widget .widgettitle {
+  background: #F4911C;
+  color: #ffffff;
+  display: inline-block;
+  position: relative;
+  font-size: 1rem;
+  padding: 4px 10px;
+  font-weight: 400;
+  margin: 1rem 0;
+  margin-bottom: 0.5rem;
+}
+.sidebar-container .widget .widgettitle:before {
+  content: ' ';
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 270px;
+  height: 1px;
+  background: #F4911C;
+}
+.sidebar-container .textwidget .toggle-traffic img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.sidebar-container .widget_categories ul {
+  list-style: none;
+  padding: 0 1rem;
+}
+.sidebar-container .widget_categories ul .cat-item {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+.sidebar-container .widget_categories ul .cat-item a {
+  color: #000000;
+}
+.sidebar-container .widget_categories ul .cat-item a:hover {
+  color: #F4911C;
+}
+.archive .title-container {
+  border-bottom: 1px solid #F4911C;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.archive .title-container h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.archive-item {
+  margin-bottom: 1.5rem;
+}
+.archive-item a {
+  color: #000000;
+}
+.archive-item img {
+  width: 100%;
+}
+.archive-item h2 {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  margin: 1rem 0;
+  color: black;
+  font-weight: 700;
+}
+.archive-item .date {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.poll {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: justify;
+  line-height: 1.5rem;
+}
+.wp-polls-ul li label {
+  font-weight: 600;
+  line-height: 2.1rem;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+input[name=vote] {
+  background: #f4911c !important;
+  padding: 0.5rem 1.1rem;
+  border: 0 !important;
+  color: white !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+input[name=result] {
+  background: #f4911c !important;
+  padding: 0.5rem 1.1rem;
+  border: 0 !important;
+  color: white !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

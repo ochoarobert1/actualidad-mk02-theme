@@ -5,9 +5,9 @@
  * the Visual Composer plugin
  *
  */
-if (!class_exists('Main_News_Dest_Shortcode')) {
+if (!class_exists('News_Item_Vertical_Shortcode')) {
 
-    class Main_News_Dest_Shortcode extends WPBakery_Custom_Main_Class
+    class News_Item_Vertical_Shortcode extends WPBakery_Custom_Main_Class
     {
 
         /**
@@ -16,11 +16,11 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
         public function __construct()
         {
             // Registers the shortcode in WordPress
-            add_shortcode('main_news_dest', array($this, 'output'));
+            add_shortcode('main_news_vertical_item', array($this, 'output'));
 
             // Map shortcode to Visual Composer
             if (function_exists('vc_lean_map')) {
-                vc_lean_map('main_news_dest', array($this, 'map'));
+                vc_lean_map('main_news_vertical_item', array($this, 'map'));
             }
         }
 
@@ -31,37 +31,41 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
         {
 
             // Extract shortcode attributes (based on the vc_lean_map function - see next function)
-            extract(vc_map_get_attributes('main_news_dest', $atts));
+            extract(vc_map_get_attributes('main_news_vertical_item', $atts));
             // Define output
             global $posted_id;
             $output = '';
-            $args = array('post_type' => $atts['post_type'], 'posts_per_page' => 8, 'order' => 'DESC', 'orderby' => 'date', 'category' => array($atts['category_bar'], 'post__not_in' => $posted_id));
+            $args = array('post_type' => $atts['post_type'], 'posts_per_page' => 1, 'order' => 'DESC', 'orderby' => 'date', 'category' => array($atts['category_bar']), 'post__not_in' => $posted_id);
             ob_start();
 ?>
-            <section class="main-dest-news-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <?php $arr_posts = new WP_Query($args); ?>
-                <?php if ($arr_posts->have_posts()) : ?>
-                    <div class="main-bar-dest-news-swiper swiper-container">
-                        <div class="swiper-wrapper">
-                            <?php while ($arr_posts->have_posts()) : $arr_posts->the_post(); ?>
-                                <?php array_push($posted_id, get_the_ID()); ?>
-                                <div class="swiper-slide">
-                                    <article class="main-dest-news-item">
-                                        <?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
-                                        <a href="<?php the_permalink(); ?>" class="main-dest-news-item-wrapper">
-                                            <h2><?php the_title(); ?></h2>
-                                            <div class="meta-wrapper">
-                                                <span><?php echo get_the_author(); ?></span> - <span><?php echo get_the_date(); ?></span>
-                                            </div>
-                                        </a>
-                                    </article>
-                                </div>
-                            <?php endwhile; ?>
+
+            <?php $arr_posts = new WP_Query($args); ?>
+            <?php if ($arr_posts->have_posts()) : ?>
+                <?php while ($arr_posts->have_posts()) : $arr_posts->the_post(); ?>
+                    <?php array_push($posted_id, get_the_ID()); ?>
+                    <article class="main-item-news-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="container-fluid p-0">
+                            <div class="row align-items-center">
+                                <picture class="main-item-news-image col-12">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <?php the_post_thumbnail('horizontal_news', array('class' => 'img-fluid')); ?>
+                                    </a>
+                                </picture>
+                                <header class="main-item-news-content col-12">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <h2><?php the_title(); ?></h2>
+                                    </a>
+                                    <div class="meta-wrapper">
+                                        <span><?php echo get_the_author(); ?></span> - <span><?php echo get_the_date(); ?></span>
+                                    </div>
+                                </header>
+                            </div>
                         </div>
-                    </div>
-                <?php endif; ?>
-                <?php wp_reset_query(); ?>
-            </section>
+                    </article>
+                <?php endwhile; ?>
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
+
 <?php
             $output = ob_get_clean();
             return $output;
@@ -87,9 +91,9 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
             endif;
 
             return array(
-                'name'        => esc_html__('Sección de Destacado en Slider', 'actualidad'),
-                'description' => esc_html__('Este Shortcode retorna el slider de destacados principal.', 'actualidad'),
-                'base'        => 'main_title_bar',
+                'name'        => esc_html__('Sección de Noticia (Vertical)', 'actualidad'),
+                'description' => esc_html__('Este Shortcode retorna un item natural de noticia.', 'actualidad'),
+                'base'        => 'main_news_vertical_item',
                 'params'      => array(
                     array(
                         'heading' => __('Tipos de Entradas', 'actualidad'),
@@ -113,4 +117,4 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
     }
 }
 
-new Main_News_Dest_Shortcode;
+new News_Item_Vertical_Shortcode;

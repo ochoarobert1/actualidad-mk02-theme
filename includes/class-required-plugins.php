@@ -41,12 +41,6 @@ function actualidad_register_required_plugins() {
             'name'      => 'WordPress Importer',
             'slug'      => 'wordpress-importer',
             'required'  => true,
-        ),
-
-        array(
-            'name'      => 'Jetpack for WordPress',
-            'slug'      => 'jetpack',
-            'required'  => false,
         )
     );
 

@@ -570,5 +570,196 @@ a {
 }
 
 /* --------------------------------------------------------------
-3.- HOME
+3.- SINGLE
 -------------------------------------------------------------- */
+
+
+.the-single {
+    & picture {
+        & img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+    }
+
+    & h1 {
+        font-size: 1.9rem;
+        font-weight: 700;
+        line-height: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    & .post-content {
+        font-size: 1rem;
+        line-height: 2rem;
+        text-align: justify;
+        margin-bottom: 3rem;
+
+        & b,
+        strong {
+            font-weight: 600;
+        }
+
+        & a {
+            color: @orange;
+
+            &:hover {
+                color: @lgray;
+            }
+        }
+    }
+
+
+    & .single-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        margin-top: 1.5rem;
+
+        & .date {
+            text-transform: capitalize;
+            font-size: 1rem;
+        }
+
+        & .single-categories a {
+            background: orange;
+            color: white;
+            font-size: .9rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+}
+
+.sidebar-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    & .widget {
+        .widgettitle {
+            background: @orange;
+            color: @white;
+            display: inline-block;
+            position: relative;
+            font-size: 1rem;
+            padding: 4px 10px;
+            font-weight: 400;
+            margin: 1rem 0;
+            margin-bottom: .5rem;
+
+            &:before {
+                content: ' ';
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                width: 270px;
+                height: 1px;
+                background: @orange;
+            }
+        }
+    }
+
+    & .textwidget .toggle-traffic img {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    & .widget_categories {
+        & ul {
+            list-style: none;
+            padding: 0 1rem;
+
+            & .cat-item {
+                font-size: 0.9rem;
+                margin-bottom: 0.8rem;
+                text-transform: uppercase;
+
+                & a {
+                    color: @black;
+
+                    &:hover {
+                        color: @orange;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+.archive {
+    .title-container {
+        border-bottom: 1px solid @orange;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        text-align: center;
+
+        & h1 {
+            font-size: 2rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+    }
+}
+
+.archive-item {
+    margin-bottom: 1.5rem;
+
+    & a {
+        color: @black;
+    }
+
+    & img {
+        width: 100%;
+    }
+
+    & h2 {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+        margin: 1rem 0;
+        color: black;
+        font-weight: 700;
+    }
+
+    & .date {
+        font-size: 0.9rem;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.poll {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: justify;
+    line-height: 1.5rem;
+}
+
+.wp-polls-ul li label {
+    font-weight: 600;
+    line-height: 2.1rem;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+input[name=vote] {
+    background: #f4911c !important;
+    padding: .5rem 1.1rem;
+    border: 0 !important;
+    color: white !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+input[name=result] {
+    background: #f4911c !important;
+    padding: .5rem 1.1rem;
+    border: 0 !important;
+    color: white !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+}

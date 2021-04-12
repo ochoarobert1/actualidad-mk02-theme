@@ -5,9 +5,9 @@
  * the Visual Composer plugin
  *
  */
-if (!class_exists('Main_News_Dest_Shortcode')) {
+if (!class_exists('Podcast_Slider_Shortcode')) {
 
-    class Main_News_Dest_Shortcode extends WPBakery_Custom_Main_Class
+    class Podcast_Slider_Shortcode extends WPBakery_Custom_Main_Class
     {
 
         /**
@@ -16,11 +16,11 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
         public function __construct()
         {
             // Registers the shortcode in WordPress
-            add_shortcode('main_news_dest', array($this, 'output'));
+            add_shortcode('podcast_slider_item', array($this, 'output'));
 
             // Map shortcode to Visual Composer
             if (function_exists('vc_lean_map')) {
-                vc_lean_map('main_news_dest', array($this, 'map'));
+                vc_lean_map('podcast_slider_item', array($this, 'map'));
             }
         }
 
@@ -31,37 +31,40 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
         {
 
             // Extract shortcode attributes (based on the vc_lean_map function - see next function)
-            extract(vc_map_get_attributes('main_news_dest', $atts));
+            extract(vc_map_get_attributes('podcast_slider_item', $atts));
             // Define output
-            global $posted_id;
             $output = '';
-            $args = array('post_type' => $atts['post_type'], 'posts_per_page' => 8, 'order' => 'DESC', 'orderby' => 'date', 'category' => array($atts['category_bar'], 'post__not_in' => $posted_id));
+            $args = array('post_type' => $atts['post_type'], 'posts_per_page' => 5, 'order' => 'DESC', 'orderby' => 'date', 'post__not_in' => $posted_id);
             ob_start();
 ?>
-            <section class="main-dest-news-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <?php $arr_posts = new WP_Query($args); ?>
-                <?php if ($arr_posts->have_posts()) : ?>
-                    <div class="main-bar-dest-news-swiper swiper-container">
-                        <div class="swiper-wrapper">
-                            <?php while ($arr_posts->have_posts()) : $arr_posts->the_post(); ?>
-                                <?php array_push($posted_id, get_the_ID()); ?>
-                                <div class="swiper-slide">
-                                    <article class="main-dest-news-item">
-                                        <?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
-                                        <a href="<?php the_permalink(); ?>" class="main-dest-news-item-wrapper">
+
+            <?php $arr_posts = new WP_Query($args); ?>
+            <?php if ($arr_posts->have_posts()) : ?>
+                <!-- Slider main container -->
+                <div class="podcast-swiper-container swiper-container">
+                    <div class="swiper-wrapper">
+                        <?php while ($arr_posts->have_posts()) : $arr_posts->the_post(); ?>
+                            <?php array_push($posted_id, get_the_ID()); ?>
+                            <div class="swiper-slide">
+                                <article class="podcast-slider-item-container">
+                                    <div class="podcast-slider-wrapper">
+                                        <picture class="podcast-slider-item-image">
+                                            <?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
+                                        </picture>
+                                        <header>
                                             <h2><?php the_title(); ?></h2>
-                                            <div class="meta-wrapper">
-                                                <span><?php echo get_the_author(); ?></span> - <span><?php echo get_the_date(); ?></span>
-                                            </div>
-                                        </a>
-                                    </article>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
+                                            <?php echo excerpt('20'); ?>
+                                        </header>
+                                        <a href="<?php echo get_post_meta(get_the_ID(), 'audio_file', true); ?>" target="_blank" class="btn btn-md btn-slider"><?php _e('Escuchar', 'actualidad'); ?></a>
+                                    </div>
+                                </article>
+                            </div>
+                        <?php endwhile; ?>
                     </div>
-                <?php endif; ?>
-                <?php wp_reset_query(); ?>
-            </section>
+                </div>
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
+
 <?php
             $output = ob_get_clean();
             return $output;
@@ -87,9 +90,9 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
             endif;
 
             return array(
-                'name'        => esc_html__('Sección de Destacado en Slider', 'actualidad'),
-                'description' => esc_html__('Este Shortcode retorna el slider de destacados principal.', 'actualidad'),
-                'base'        => 'main_title_bar',
+                'name'        => esc_html__('Slider de Podcasts', 'actualidad'),
+                'description' => esc_html__('Este Shortcode retorna un slider de Podcasts.', 'actualidad'),
+                'base'        => 'podcast_slider_item',
                 'params'      => array(
                     array(
                         'heading' => __('Tipos de Entradas', 'actualidad'),
@@ -113,4 +116,4 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
     }
 }
 
-new Main_News_Dest_Shortcode;
+new Podcast_Slider_Shortcode;

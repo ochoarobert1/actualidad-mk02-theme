@@ -12,6 +12,11 @@ VARIABLES
 @blue: #0073AA;
 @menu: #23282D;
 @menudark: #171a1d;
+@gray: #333333;
+@lgray: #636363;
+@mgray: #949494;
+@orange: #F4911C;
+@lorange: #f9bc1c;
 
 /* --------------------------------------------------------------
 LOGIN PAGE
@@ -85,6 +90,30 @@ ADMIN STYLE
 /* --------------------------------------------------------------
 CUSTOM MENU ADMIN PAGE
 -------------------------------------------------------------- */
+body {
+    & #adminmenu {
+        & #toplevel_page_actualidad-control-panel {
+            & a {
+                background: @orange;
+                color: @black;
+            }
+
+            .wp-menu-image {
+                background: url(../images/icon.png);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: 24px;
+            }
+
+            & .wp-menu-name {
+                font-size: 0.75rem;
+                line-height: 1.3rem;
+            }
+        }
+    }
+}
+
+
 body.toplevel_page_actualidad-control-panel {
     & #wpcontent {
         padding-left: 0;

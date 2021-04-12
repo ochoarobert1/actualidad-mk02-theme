@@ -5,22 +5,21 @@
  * the Visual Composer plugin
  *
  */
-if (!class_exists('Main_News_Dest_Shortcode')) {
+if (!class_exists('Horizontal_News_Shortcode')) {
 
-    class Main_News_Dest_Shortcode extends WPBakery_Custom_Main_Class
+    class Horizontal_News_Shortcode extends WPBakery_Custom_Main_Class
     {
-
         /**
          * Main constructor
          */
         public function __construct()
         {
             // Registers the shortcode in WordPress
-            add_shortcode('main_news_dest', array($this, 'output'));
+            add_shortcode('main_horizontal_news', array($this, 'output'));
 
             // Map shortcode to Visual Composer
             if (function_exists('vc_lean_map')) {
-                vc_lean_map('main_news_dest', array($this, 'map'));
+                vc_lean_map('main_horizontal_news', array($this, 'map'));
             }
         }
 
@@ -31,31 +30,32 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
         {
 
             // Extract shortcode attributes (based on the vc_lean_map function - see next function)
-            extract(vc_map_get_attributes('main_news_dest', $atts));
+            extract(vc_map_get_attributes('main_horizontal_news', $atts));
             // Define output
-            global $posted_id;
             $output = '';
-            $args = array('post_type' => $atts['post_type'], 'posts_per_page' => 8, 'order' => 'DESC', 'orderby' => 'date', 'category' => array($atts['category_bar'], 'post__not_in' => $posted_id));
+            $args = array('post_type' => $atts['post_type'], 'posts_per_page' => 3, 'order' => 'DESC', 'orderby' => 'date', 'post__not_in' => $posted_id, 'tax_query' => array(
+                array('taxonomy' => 'category', 'field'    => 'id', 'terms'    => $atts['category_bar'])
+            ));
             ob_start();
 ?>
-            <section class="main-dest-news-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <section class="main-horizontal-news-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <?php $arr_posts = new WP_Query($args); ?>
                 <?php if ($arr_posts->have_posts()) : ?>
-                    <div class="main-bar-dest-news-swiper swiper-container">
-                        <div class="swiper-wrapper">
+                    <div class="container p-0">
+                        <div class="row">
                             <?php while ($arr_posts->have_posts()) : $arr_posts->the_post(); ?>
                                 <?php array_push($posted_id, get_the_ID()); ?>
-                                <div class="swiper-slide">
-                                    <article class="main-dest-news-item">
-                                        <?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
+                                <article class="main-horizontal-news-item col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                                    <?php the_post_thumbnail('horizontal_news', array('class' => 'img-fluid')); ?>
+                                    <header>
+                                        <div class="meta-wrapper">
+                                            <span><?php echo get_the_author(); ?></span> - <span><?php echo get_the_date(); ?></span>
+                                        </div>
                                         <a href="<?php the_permalink(); ?>" class="main-dest-news-item-wrapper">
                                             <h2><?php the_title(); ?></h2>
-                                            <div class="meta-wrapper">
-                                                <span><?php echo get_the_author(); ?></span> - <span><?php echo get_the_date(); ?></span>
-                                            </div>
                                         </a>
-                                    </article>
-                                </div>
+                                    </header>
+                                </article>
                             <?php endwhile; ?>
                         </div>
                     </div>
@@ -87,9 +87,9 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
             endif;
 
             return array(
-                'name'        => esc_html__('Sección de Destacado en Slider', 'actualidad'),
-                'description' => esc_html__('Este Shortcode retorna el slider de destacados principal.', 'actualidad'),
-                'base'        => 'main_title_bar',
+                'name'        => esc_html__('Sección de noticias Horizontal', 'actualidad'),
+                'description' => esc_html__('Este Shortcode retorna una seccion de noticias en horizontal.', 'actualidad'),
+                'base'        => 'main_horizontal_news',
                 'params'      => array(
                     array(
                         'heading' => __('Tipos de Entradas', 'actualidad'),
@@ -113,4 +113,4 @@ if (!class_exists('Main_News_Dest_Shortcode')) {
     }
 }
 
-new Main_News_Dest_Shortcode;
+new Horizontal_News_Shortcode;
