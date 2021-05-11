@@ -53,7 +53,9 @@ if (!class_exists('Podcast_Slider_Shortcode')) {
                                         </picture>
                                         <header>
                                             <h2><?php the_title(); ?></h2>
-                                            <?php echo excerpt('20'); ?>
+                                            <div class="excerpt">
+                                            <?php echo excerpt('30'); ?>
+                                            </div>
                                         </header>
                                         <a href="<?php echo get_post_meta(get_the_ID(), 'audio_file', true); ?>" target="_blank" class="btn btn-md btn-slider"><?php _e('Escuchar', 'actualidad'); ?></a>
                                     </div>

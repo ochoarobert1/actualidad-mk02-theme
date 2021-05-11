@@ -609,31 +609,3 @@ a:hover {
   display: block;
   margin-bottom: 0.5rem;
 }
-.poll {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  text-align: justify;
-  line-height: 1.5rem;
-}
-.wp-polls-ul li label {
-  font-weight: 600;
-  line-height: 2.1rem;
-  font-size: 0.9rem;
-  vertical-align: middle;
-}
-input[name=vote] {
-  background: #f4911c !important;
-  padding: 0.5rem 1.1rem;
-  border: 0 !important;
-  color: white !important;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-input[name=result] {
-  background: #f4911c !important;
-  padding: 0.5rem 1.1rem;
-  border: 0 !important;
-  color: white !important;
-  font-size: 0.9rem;
-  font-weight: 500;
-}

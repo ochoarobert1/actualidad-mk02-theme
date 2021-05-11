@@ -9,7 +9,7 @@
     <header>
         <h1 itemprop="name"><?php the_title(); ?></h1>
         <div class="single-meta">
-            <div class="date"><i class="fa fa-clock-o"></i> <?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></div>
+            <div class="date"><i class="fa fa-clock-o"></i> <?php the_time('F j, Y'); ?></div>
             <div class="single-categories"><?php the_category(' '); ?></div>
         </div>
     </header>

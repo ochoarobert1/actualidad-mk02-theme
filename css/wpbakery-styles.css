@@ -86,7 +86,7 @@ MAIN DEST NEWS
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.25);
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -217,27 +217,38 @@ HORIZONTAL NEWS
   background: #f9bc1c;
   color: #ffffff !important;
 }
-/* --------------------------------------------------------------
-ENTREVISTAS
--------------------------------------------------------------- */
-.main-item-entrevistas-content {
-  font-size: 1rem;
-  line-height: 2rem;
-  margin-top: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #d0d0d0;
+.main-video-live-item {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
 }
-.main-item-entrevistas-content h2 {
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-.main-item-entrevistas-content audio {
+.main-video-live-item .main-video-live-item-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 0.5rem;
-  margin: 0;
-  border-radius: 0 !important;
-  background: #e4e4e4;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.custom-especiales-row .main-item-news-image img {
-  width: 100% !important;
+.main-video-live-item .main-video-live-item-wrapper:hover {
+  background: rgba(0, 0, 0, 0.35);
 }
